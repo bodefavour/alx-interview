@@ -5,7 +5,7 @@ const request = require('request');
 // Retrieve the Movie ID from the command line arguments
 const movieId = process.argv[2];
 if (!movieId) {
-  console.error("Usage: ./0-starwars_characters.js <Movie ID>");
+  console.error('Usage: ./0-starwars_characters.js <Movie ID>');
   process.exit(1);
 }
 
@@ -15,7 +15,7 @@ const baseUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 // Fetch the movie details
 request(baseUrl, (error, response, body) => {
   if (error) {
-    console.error("Error fetching movie details:", error);
+    console.error('Error fetching movie details:', error);
     return;
   }
 
@@ -51,9 +51,9 @@ request(baseUrl, (error, response, body) => {
         names.forEach((name) => console.log(name));
       })
       .catch((error) => {
-        console.error("Error fetching characters:", error);
+        console.error('Error fetching characters:', error);
       });
   } catch (e) {
-    console.error("Error parsing response:", e.message);
+    console.error('Error parsing response:', e.message);
   }
 });
